@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./images/food.png">
+    <title>Edit Your recepie</title>
+</head>
+<body>
+    <div class="header">
+        <div class="header__container">
+            <h1 class="header__title">Recepie app</h1>
+            <h2 class="Header__subtitle">What You gonna eat today ?</h2>
+        </div>  
+    </div>
+
+    <div class="recepie-actions">
+        <a href="./index.html">Back to recepies</a>
+    </div>
+
+    <div class="recepie-container">
+        <input id="recepie-name" class="recepie-input" type="text" placeholder="Recepie Name" >
+        <textarea id="recepie-body" class="recepie-textarea" placeholder="Enter recepie steps"></textarea>
+    </div>
+
+
+    <h1 class="ingredients-title">Ingredients:</h1>
+    <div id="ingredients-container"></div>
+    <form id="submit-ingredient">
+        <input id="recepie-input" class="input" type="text" placeholder="Type ingredient..." name="newIngredient">
+        <button id="submit-recepie">Add</button>
+    </form>
+
+    <div class="button-container">
+        <h2 class="danger-zone">Danger zone</h2>
+        <button id="remove-recepie" class="recepie-button">Delete recepie</button>
+    </div>
+
+    <script src="/scripts/edit-bundle.js"></script>
+</body>
+</html>
