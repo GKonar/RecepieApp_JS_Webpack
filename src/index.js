@@ -1,6 +1,7 @@
 import { createRecepie } from './recepies'
 import { setFilters } from './filters'
 import { renderRecepies } from './views'
+import '../public/styles/styles.index.css'
 
 renderRecepies()
 

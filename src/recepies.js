@@ -2,7 +2,7 @@ import uuidv4 from 'uuid/v4'
 
 let recepies = []
 
-// Get recepies from local storage
+//  Get recepies from local storage
 const loadRecepies = () => {
     const recepiesJSON = localStorage.getItem('recepies')
 
@@ -13,15 +13,15 @@ const loadRecepies = () => {
     }
 }
 
-// Save recepies on local storage
+//  Save recepies on local storage
 const saveRecepies = () => {
     localStorage.setItem('recepies', JSON.stringify(recepies))
 }
 
-// Expose recepies from module
+//  Expose recepies from module
 const getRecepies = () => recepies 
 
-// Create Recepie
+//  Create Recepie
 const createRecepie = () => {
     let id = uuidv4()
     
@@ -36,7 +36,7 @@ const createRecepie = () => {
     return id
 }
 
-// Remove recepie
+//  Remove recepie
 const removeRecepie = (id) => {
     const recepieIndex = recepies.findIndex(recepie => recepie.id === id)
 
@@ -66,7 +66,7 @@ const updateRecepie = (id, updates) => {
 
 // ************* INGREDIENTS ARRAY *************
 
-// Add new ingredient 
+//  Add new ingredient 
 const addIngredient = (id ,ingredient) => { // id of recepie
     const newIngredient = {
         id: uuidv4(),
@@ -85,7 +85,7 @@ const addIngredient = (id ,ingredient) => { // id of recepie
     return id
 }
 
-// Remove ingredient 
+//  Remove ingredient 
 const removeIngredient = (id, ingredientId) => { 
     const recepie = recepies.find(recepie => recepie.id === id) // id of recepie 
     const ingredients = recepie.ingredients

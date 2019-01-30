@@ -1,5 +1,6 @@
 import { getRecepies, addIngredient, updateRecepie, removeRecepie } from './recepies' 
 import { renderIngredients } from './views' 
+import '../public/styles/styles.edit.css'
 
 const recepieName = document.querySelector('#recepie-name')
 const recepieBody = document.querySelector('#recepie-body')

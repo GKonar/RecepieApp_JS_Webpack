@@ -6,30 +6,36 @@
     <title>Recepie-app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css" />
     <link rel="icon" href="./images/food.png">
 </head>
 <body>
     <div class="header">
         <div class="header__container">
             <h1 class="header__title">Recepie app</h1>
-            <h2 class="Header__subtitle">What You gonna eat today ?</h2>
+            <h2 class="header__subtitle">Remember Your best ones.</h2>
         </div>  
-    </div>
+    </div>  
 
-    <div class="recepies-actions">
-        <div class="recepies-actions__container">
-            <input id="search-recepies" class="input" type="text" placeholder="Find Your recepie">
+    <div class="recepies">
+        <div class="recepies-actions">
+            <div class="recepies-actions__container">
+                <input  class="recepies-actions__input" id="search-recepies" class="input" type="text" placeholder="Find Your recepie">
+            </div>
         </div>
-    </div>
 
-    <div class="recepies__container">
-        <div id="recepies"></div>
-        <button id="add-recepie" class="button">Add recepie</button>
+        <div class="recepies__container">
+            <div id="recepies"></div>
+            <button id="add-recepie" class="button">Add recepie</button>
+        </div>
     </div>
     
     <script src="/scripts/index-bundle.js"></script>
+    
+    <footer class="footer">
+        <p class="footer__about">Made by Grzegorz Konarski</p>
+        <a href="https://icons8.com/icon/107450/healthy-food" class="footer__link">Healthy Food icon by Icons8</a>
+        <p class="footer__idea">Idea By Andrew Mead - The Modern JavaScript Bootcamp (2019)</p>
+    </footer>
 </body>
 
-<!-- <a href="https://icons8.com/icon/107450/healthy-food">Healthy Food icon by Icons8</a> -->
 </html>

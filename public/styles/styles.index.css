@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Mali:400,700&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&subset=latin-ext');
+
+/**********  General Styles  **********/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1506968430777-bf7784a87f23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+    position: relative;
+    font-family: 'Roboto Mono', monospace;
+    height: 100vh;
+}
+
+/**********  Header  **********/
+.header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-family: 'Mali', cursive;
+
+    background-image: linear-gradient(
+        to right ,
+        rgb(44, 62, 80, 0.7),
+        rgba(240, 172, 0, .3)), 
+        url('https://images.unsplash.com/photo-1506968430777-bf7784a87f23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+    background-position: top ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgba(222, 201, 143, 0.9);
+    text-shadow:3px 3px 5px  #2c3e50;
+
+}
+
+.header__container {
+    text-align: center;
+    font-family: 'Mali', cursive;
+}
+
+.header__title {
+    font-size: 3rem;
+}
+
+.header__subtitle {
+    padding-bottom: 1rem;
+}
+
+/**********  Recepies Card  **********/
+
+.recepies__container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.recepies {
+    display: flex;  
+    flex-direction: column;
+    width: 50rem;
+    max-width: 80%;
+    min-height: 50vh;
+    margin: 0 auto;
+    background-image: linear-gradient(
+        to right ,
+        rgba(255, 241, 204, .9),
+        rgba(240, 172, 0, .5)), 
+        url('https://images.unsplash.com/photo-1523431182330-8aa404383352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+    background-size: cover;
+    background-position: top 20% left 20%;
+    border-radius: 2px;
+    
+    -webkit-box-shadow: 0px 14px 40px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 14px 40px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 14px 40px 0px rgba(0,0,0,0.75);
+}
+
+.recepies a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.recepies p {
+    margin: .6rem;
+}
+
+.recepies-u-underline {
+    font-weight: 700;
+    color: rgba(255, 0, 0, 0.461);
+}
+
+.recepies-actions__container {
+    position: relative;
+}
+
+.recepies-actions__input {
+    width: 30%;
+    padding: .5rem .4rem;
+    position: relative;
+    left: 2rem;
+    margin: .6rem 0;
+    border-radius: .2rem;
+    border: 2px solid rgba(157, 126, 3, 0.38);
+    background-color: #f1c40f77;
+    
+    -webkit-box-shadow: 0px 4px 55px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 55px -6px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 55px -6px rgba(0,0,0,0.75);
+}::placeholder {
+    color: #2c3e508a;
+    letter-spacing: .1rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: .6rem;
+    font-weight: 700;
+}:focus {
+    outline: none;
+}
+
+/**********  Button  **********/
+
+.button {
+    width: 20%;
+    padding: .5rem;
+    margin: 1rem 0;
+    border-radius: .5rem;
+    background-color: #f1c40fd4;
+    font-family: 'Mali', cursive;
+    font-weight: 700;
+    font-size: .8rem;
+    border: none;
+    transition: all .2s;
+}
+
+.button:hover {
+    transform: translateY(-1.5px);
+    -webkit-box-shadow: 10px 10px 46px 0px rgba(50,64,69,0.7);
+    -moz-box-shadow: 10px 10px 46px 0px rgba(50,64,69,0.7);
+    box-shadow: 10px 10px 46px 0px rgba(50,64,69, 0.7);
+}
+
+.button:active {
+    transform: translateY(-.5px);
+    -webkit-box-shadow: 10px 10px 46px 0px rgba(50,64,69,0.5);
+    -moz-box-shadow: 10px 10px 46px 0px rgba(50,64,69,0.5);
+    box-shadow: 10px 10px 46px 0px rgba(50,64,69, 0.5);
+}
+
+/**********  Footer  **********/
+
+.footer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: cemter;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    margin-top: 3rem;
+    background-color: #2c3e50;
+    opacity: .6;
+    padding: 3rem 0;
+    width: 100%;
+    -webkit-box-shadow: 0px 4px 40px 9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 40px 9px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 40px 9px rgba(0,0,0,0.75);
+}
+
+.footer__about {
+    font-weight: 700;
+}
+
+.footer__about,
+.footer__idea {
+    text-align: center;
+    color: #ffffff;
+    font-size: .7rem;
+}
+
+.footer__link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: .7rem;
+}

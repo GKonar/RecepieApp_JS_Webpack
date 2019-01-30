@@ -1,15 +1,15 @@
 import { getRecepies, removeIngredient } from './recepies'
 import { getFilters } from './filters'
 
-// Generate recepie DOM
+//  Generate recepie DOM
 const generateRecepieDOM = recepie => {
     
-    // Create recepie DOM structure
+    //  Create recepie DOM structure
     const recepieEl = document.createElement('p')
     const recepieTextEl = document.createElement('a')
     const recepieIngredientsEl = document.createElement('p')
     
-    // Setup the recepie title
+    //  Setup the recepie title
     if (recepie.name.length > 0) {
         recepieTextEl.textContent = recepie.name
     } else {
@@ -18,13 +18,27 @@ const generateRecepieDOM = recepie => {
     
     recepieEl.appendChild(recepieTextEl)
 
-    //Setup the link to recepie edit page
+    //  Setup the link to recepie edit page
     recepieTextEl.href = `./edit.html#${recepie.id}`
 
-    //Generate status message
-
+    //  Generate status message
     const unavailableIngredients = recepie.ingredients.filter(ingredient => !ingredient.isAvailable)
-    recepieIngredientsEl.textContent = `You need ${unavailableIngredients.length} more ingredient for that dish`
+    const unavailableIngredientsNumber = unavailableIngredients.length
+    const plurality = () => {
+        let plural
+        unavailableIngredientsNumber > 1 ? plural = 's' : plural = ''
+        return plural
+    }
+    
+    if (unavailableIngredientsNumber >= 1) {
+        recepieIngredientsEl.textContent = `You need ${unavailableIngredientsNumber} more ingredient${plurality()} for that dish`
+    } else if (unavailableIngredientsNumber === 0 && recepie.ingredients.length > 0) {
+        recepieIngredientsEl.textContent = `You have all the ingredients`
+    } else {
+        recepieIngredientsEl.textContent = `You didn't add any ingredients`
+        recepieIngredientsEl.classList.add('recepies-u-underline')
+    }
+    
     recepieEl.appendChild(recepieIngredientsEl)
 
     return recepieEl
@@ -47,7 +61,7 @@ const renderRecepies = () => {
 
 // ********** INGREDIENTS VIEWS ********** //
 
-// Render list of ingredients
+//  Render list of ingredients
 const renderIngredients = (recepie) => {
     const IngredientsContainer = document.querySelector('#ingredients-container')
     
@@ -58,9 +72,9 @@ const renderIngredients = (recepie) => {
     })
 }
 
-// Generate Ingredient Todo
+//  Generate Ingredient Todo
 const generateIngredientDOM = (ingredient) => {  // not defined
-    // Creating DOM elements
+    //  Creating DOM elements
 
     const ingredientEl = document.createElement('label')
     const containerEl = document.createElement('div')
@@ -78,14 +92,14 @@ const generateIngredientDOM = (ingredient) => {  // not defined
         localStorage.setItem('recepies', JSON.stringify(recepies)) 
     })
 
-    // Setup ingredientTextEl
+    //  Setup ingredientTextEl
     ingredientTextEl.textContent = ingredient.name
     containerEl.appendChild(ingredientTextEl)
 
-    //Setup Containet
+    //  Setup Containet
     ingredientEl.appendChild(containerEl)
 
-    //Setup Button
+    //  Setup Button
     ingredientButton.textContent='remove'
     containerEl.appendChild(ingredientButton)
     ingredientButton.addEventListener('click', (e) => {
